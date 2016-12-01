@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Connect4Official.iml" filepath="$PROJECT_DIR$/Connect4Official.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../Connect4Official/Connect4Official.iml" filepath="$PROJECT_DIR$/../../Connect4Official/Connect4Official.iml" />
     </modules>
   </component>
 </project>

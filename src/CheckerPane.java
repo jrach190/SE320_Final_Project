@@ -44,6 +44,10 @@ public class CheckerPane extends GridPane
      * @param row The row to add the marker to
      * @param column The column to add the marker to
      * @param playerNumber The player adding the marker
+     *
+     * Credit to http://stackoverflow.com/questions/27154996/replace-a-node-at-row-col-in-a-javafx-gridpane for
+     * assistance updating the proper node based on the row and column 
+     *
      */
     public void addCheckerToPane(int row, int column, int playerNumber)
     {

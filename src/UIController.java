@@ -7,7 +7,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceDialog;
-import javafx.scene.control.Dialog;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -60,9 +59,15 @@ public class UIController extends Application {
                     boardDisplay.addCheckerToPane(gameRules.addChecker(column), column, gameRules.getPlayerNumber());
                     if (gameRules.getGameWonStatus() && gameRules.getWinner()!= 0)
                     {
-                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                        alert.setContentText("Player " + gameRules.getWinner() + " wins!");
-                        alert.showAndWait();
+//                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+//                        alert.setContentText("Player " + gameRules.getWinner() + " wins!");
+//                        alert.showAndWait();
+
+                        ChoiceDialog choiceDialog = new ChoiceDialog();
+                        choiceDialog.setContentText("Player " + gameRules.getWinner() + " wins! Select from the " +
+                                "box what you want to do next...");
+//                        choiceDialog.getItems().addAll()
+                        choiceDialog.showAndWait();
                     }
                 }
                 catch (IndexOutOfBoundsException outOfBoundsException)

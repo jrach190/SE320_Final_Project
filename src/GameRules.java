@@ -143,13 +143,39 @@ public class GameRules {
         return false;
     }
 
-    private boolean checkForDiagonalRightWin()
-    {
+    private boolean checkForDiagonalRightWin() {
+        for (int i=0; i<4; i++)
+        {
+            for (int j=0; j<5; j++)
+            {
+                if ((gameboard[i][j] == gameboard[i+1][j+1]) && (gameboard[i][j] == gameboard[i+2][j+2]) &&
+                (gameboard[i][j] == gameboard[i+3][j+3]) && gameboard[i][j] != 0)
+                {
+                    System.out.println("Player has won diagonally to the right on backend");
+                    winner = gameboard[i][j];
+                    return true;
+                }
+            }
+        }
+
         return false;
     }
 
     private boolean checkforDiagonalLeftWin()
     {
+        for (int i=0; i<4; i++)
+        {
+            for (int j=3; j<8; j++)
+            {
+                if ((gameboard[i][j] == gameboard[i+1][j-1]) && (gameboard[i][j] == gameboard[i+2][j-2]) &&
+                        (gameboard[i][j] == gameboard[i+3][j-3]) && gameboard[i][j] != 0)
+                {
+                    System.out.println("Player has won diagonally to the left on backend");
+                    winner = gameboard[i][j];
+                    return true;
+                }
+            }
+        }
         return false;
     }
 

@@ -67,8 +67,21 @@ public class GameRules {
         turnNumber--;
     }
 
+    /**
+     * Method to return the int value of the winner
+     * @return The winner of the game
+     */
     public int getWinner() {
         return winner;
+    }
+
+    /**
+     * Method to set the winner in the case of a forfeit game
+     * @param winner the int value of the player who won
+     */
+    public void setWinner(int winner)
+    {
+        this.winner = winner;
     }
 
     /**
@@ -187,6 +200,11 @@ public class GameRules {
     public boolean getGameWonStatus()
     {
         return gameWon;
+    }
+
+    public boolean getGameTiedStatus()
+    {
+        return isTied;
     }
 
     public void resetBoard()

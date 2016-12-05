@@ -28,6 +28,8 @@ public class CheckerPane extends GridPane
         setHgap(10);
         setVgap(10);
 
+        setStyle("-fx-border-style: solid inside;" + "-fx-border-color: dimgrey");
+
         initializePane();
     }
 

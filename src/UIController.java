@@ -58,12 +58,14 @@ public class UIController extends Application {
                 try
                 {
                     boardDisplay.addCheckerToPane(gameRules.addChecker(column), column, gameRules.getPlayerNumber());
-                    if (gameRules.getGameWonStatus())
+                    if (gameRules.getGameWonStatus() && gameRules.getWinner()!= 0)
                     {
-                        ChoiceDialog gameOverChoice = new ChoiceDialog();
-                        gameOverChoice.setContentText("Game over! Player " + gameRules.getPlayerNumber());
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setContentText("Player " + gameRules.getWinner() + " wins!");
+                        alert.showAndWait();
                     }
-                } catch (IndexOutOfBoundsException outOfBoundsException)
+                }
+                catch (IndexOutOfBoundsException outOfBoundsException)
                 {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setContentText(outOfBoundsException.getMessage());

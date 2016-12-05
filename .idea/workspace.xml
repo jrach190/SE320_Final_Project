@@ -5,8 +5,6 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../Connect4Official/.idea/vcs.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../Connect4Official/src/GameRules.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../Connect4Official/src/MainUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CheckerPane.java" afterPath="$PROJECT_DIR$/src/CheckerPane.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameRules.java" afterPath="$PROJECT_DIR$/src/GameRules.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UIController.java" afterPath="$PROJECT_DIR$/src/UIController.java" />
     </list>
@@ -30,24 +28,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GameRules.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GameRules.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GameRules.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+            <state relative-caret-position="100">
+              <caret line="117" column="79" selection-start-line="117" selection-start-column="79" selection-end-line="117" selection-end-column="79" />
               <folding>
                 <element signature="docComment;method#getPlayerNumber#0;class#GameRules#0" expanded="false" />
                 <element signature="docComment;method#decrementTurnNumber#0;class#GameRules#0" expanded="false" />
+                <element signature="e#1657#1658#0" expanded="true" />
+                <element signature="e#1686#1687#0" expanded="true" />
                 <element signature="docComment;method#initializeBoard#0;class#GameRules#0" expanded="false" />
                 <element signature="method#initializeBoard#0;class#GameRules#0" expanded="false" />
-                <element signature="e#1938#1939#0" expanded="true" />
-                <element signature="e#1966#1967#0" expanded="true" />
-                <element signature="e#2017#2018#0" expanded="true" />
-                <element signature="e#2045#2046#0" expanded="true" />
-                <element signature="e#2094#2095#0" expanded="true" />
-                <element signature="e#2122#2123#0" expanded="true" />
-                <element signature="e#2167#2168#0" expanded="true" />
-                <element signature="e#2197#2198#0" expanded="true" />
+                <element signature="e#3787#3788#0" expanded="true" />
+                <element signature="e#3815#3816#0" expanded="true" />
+                <element signature="e#3868#3869#0" expanded="true" />
+                <element signature="e#3896#3897#0" expanded="true" />
+                <element signature="e#3941#3942#0" expanded="true" />
+                <element signature="e#3971#3972#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -56,8 +54,8 @@
       <file leaf-file-name="UIController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/UIController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="61" column="21" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
+            <state relative-caret-position="505">
+              <caret line="64" column="44" selection-start-line="64" selection-start-column="44" selection-end-line="64" selection-end-column="44" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -66,7 +64,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CheckerPane.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CheckerPane.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CheckerPane.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="190">
@@ -681,12 +679,12 @@
       <workItem from="1480119832419" duration="863000" />
       <workItem from="1480130415836" duration="26052000" />
       <workItem from="1480628461167" duration="2774000" />
-      <workItem from="1480801955542" duration="12249000" />
+      <workItem from="1480801955542" duration="17797000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41938000" />
+    <option name="totallyTimeSpent" value="47486000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -735,7 +733,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/GameRules.java</url>
-          <line>47</line>
+          <line>51</line>
           <properties class="GameRules" method="getPlayerNumber" />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
@@ -764,16 +762,16 @@
           <folding>
             <element signature="docComment;method#getPlayerNumber#0;class#GameRules#0" expanded="false" />
             <element signature="docComment;method#decrementTurnNumber#0;class#GameRules#0" expanded="false" />
+            <element signature="e#1657#1658#0" expanded="true" />
+            <element signature="e#1686#1687#0" expanded="true" />
             <element signature="docComment;method#initializeBoard#0;class#GameRules#0" expanded="false" />
             <element signature="method#initializeBoard#0;class#GameRules#0" expanded="false" />
-            <element signature="e#1938#1939#0" expanded="true" />
-            <element signature="e#1966#1967#0" expanded="true" />
-            <element signature="e#2017#2018#0" expanded="true" />
-            <element signature="e#2045#2046#0" expanded="true" />
-            <element signature="e#2094#2095#0" expanded="true" />
-            <element signature="e#2122#2123#0" expanded="true" />
-            <element signature="e#2167#2168#0" expanded="true" />
-            <element signature="e#2197#2198#0" expanded="true" />
+            <element signature="e#3787#3788#0" expanded="true" />
+            <element signature="e#3815#3816#0" expanded="true" />
+            <element signature="e#3868#3869#0" expanded="true" />
+            <element signature="e#3896#3897#0" expanded="true" />
+            <element signature="e#3941#3942#0" expanded="true" />
+            <element signature="e#3971#3972#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -812,16 +810,16 @@
           <folding>
             <element signature="docComment;method#getPlayerNumber#0;class#GameRules#0" expanded="false" />
             <element signature="docComment;method#decrementTurnNumber#0;class#GameRules#0" expanded="false" />
+            <element signature="e#1657#1658#0" expanded="true" />
+            <element signature="e#1686#1687#0" expanded="true" />
             <element signature="docComment;method#initializeBoard#0;class#GameRules#0" expanded="false" />
             <element signature="method#initializeBoard#0;class#GameRules#0" expanded="false" />
-            <element signature="e#1938#1939#0" expanded="true" />
-            <element signature="e#1966#1967#0" expanded="true" />
-            <element signature="e#2017#2018#0" expanded="true" />
-            <element signature="e#2045#2046#0" expanded="true" />
-            <element signature="e#2094#2095#0" expanded="true" />
-            <element signature="e#2122#2123#0" expanded="true" />
-            <element signature="e#2167#2168#0" expanded="true" />
-            <element signature="e#2197#2198#0" expanded="true" />
+            <element signature="e#3787#3788#0" expanded="true" />
+            <element signature="e#3815#3816#0" expanded="true" />
+            <element signature="e#3868#3869#0" expanded="true" />
+            <element signature="e#3896#3897#0" expanded="true" />
+            <element signature="e#3941#3942#0" expanded="true" />
+            <element signature="e#3971#3972#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -872,38 +870,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameRules.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
-          <folding>
-            <element signature="docComment;method#getPlayerNumber#0;class#GameRules#0" expanded="false" />
-            <element signature="docComment;method#decrementTurnNumber#0;class#GameRules#0" expanded="false" />
-            <element signature="docComment;method#initializeBoard#0;class#GameRules#0" expanded="false" />
-            <element signature="method#initializeBoard#0;class#GameRules#0" expanded="false" />
-            <element signature="e#1938#1939#0" expanded="true" />
-            <element signature="e#1966#1967#0" expanded="true" />
-            <element signature="e#2017#2018#0" expanded="true" />
-            <element signature="e#2045#2046#0" expanded="true" />
-            <element signature="e#2094#2095#0" expanded="true" />
-            <element signature="e#2122#2123#0" expanded="true" />
-            <element signature="e#2167#2168#0" expanded="true" />
-            <element signature="e#2197#2198#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UIController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="61" column="21" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CheckerPane.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -913,6 +879,38 @@
             <element signature="imports" expanded="true" />
             <element signature="e#2522#2523#0" expanded="true" />
             <element signature="e#2561#2562#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UIController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="64" column="44" selection-start-line="64" selection-start-column="44" selection-end-line="64" selection-end-column="44" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameRules.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="117" column="79" selection-start-line="117" selection-start-column="79" selection-end-line="117" selection-end-column="79" />
+          <folding>
+            <element signature="docComment;method#getPlayerNumber#0;class#GameRules#0" expanded="false" />
+            <element signature="docComment;method#decrementTurnNumber#0;class#GameRules#0" expanded="false" />
+            <element signature="e#1657#1658#0" expanded="true" />
+            <element signature="e#1686#1687#0" expanded="true" />
+            <element signature="docComment;method#initializeBoard#0;class#GameRules#0" expanded="false" />
+            <element signature="method#initializeBoard#0;class#GameRules#0" expanded="false" />
+            <element signature="e#3787#3788#0" expanded="true" />
+            <element signature="e#3815#3816#0" expanded="true" />
+            <element signature="e#3868#3869#0" expanded="true" />
+            <element signature="e#3896#3897#0" expanded="true" />
+            <element signature="e#3941#3942#0" expanded="true" />
+            <element signature="e#3971#3972#0" expanded="true" />
           </folding>
         </state>
       </provider>

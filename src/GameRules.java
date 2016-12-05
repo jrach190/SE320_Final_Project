@@ -12,8 +12,11 @@ public class GameRules {
     private int[][] gameboard = new int[7][8];
 
     private int turnNumber = 0;
+    private int winner;
 
     private boolean gameWon = false;
+    private boolean isTied = false;
+
 
     public GameRules()
     {
@@ -33,6 +36,7 @@ public class GameRules {
             {
                 gameboard[i][column] = getPlayerNumber();
                 checkForWin();
+                checkForTie();
                 turnNumber++;
                 System.out.print(getPlayerNumber());
                 return i;
@@ -58,6 +62,10 @@ public class GameRules {
         turnNumber--;
     }
 
+    public int getWinner() {
+        return winner;
+    }
+
     /**
      * Method to initialize all elements of the board array to 0
      */
@@ -74,21 +82,73 @@ public class GameRules {
 
     private boolean checkForWin()
     {
-
+        if (checkForVerticalWin() || checkForHorizontalWin() || checkforDiagonalLeftWin() || checkForDiagonalRightWin())
+        {
+            gameWon = true;
+        }
         return gameWon;
+    }
+
+    private boolean checkForTie()
+    {
+        for (int i=0; i<7; i++)
+        {
+            for (int j=0; j<8; j++)
+            {
+                if (gameboard[i][j] == 0)
+                {
+                    isTied = false;
+                    return isTied;
+                }
+            }
+        }
+        isTied=true;
+        return isTied;
     }
 
     private boolean checkForVerticalWin()
     {
+        for (int i=0; i<4; i++)
+        {
+            for (int j=0; j<8; j++)
+            {
+                if ((gameboard[i][j] == gameboard[i+1][j]) && (gameboard[i][j] == gameboard[i+2][j]) &&
+                        (gameboard[i][j] == gameboard[i+3][j]) && (gameboard[i][j] != 0))
+                {
+                    System.out.println("Player has won vertically on backend");
+                    winner = gameboard[i][j];
+                    return true;
+                }
+            }
+
+        }
         return false;
     }
 
     private boolean checkForHorizontalWin()
     {
+        for (int i=0; i<7; i++)
+        {
+            for (int j=0; j<5; j++)
+            {
+                if ((gameboard[i][j] == gameboard[i][j+1]) && (gameboard[i][j] == gameboard[i][j+2]) &&
+                        (gameboard[i][j] == gameboard[i][j+3]) && (gameboard[i][j] != 0))
+                {
+                    System.out.println("Player has won horizontally on backend");
+                    winner = gameboard[i][j];
+                    return true;
+                }
+            }
+        }
         return false;
     }
 
-    private boolean checkForDiagonalWin()
+    private boolean checkForDiagonalRightWin()
+    {
+        return false;
+    }
+
+    private boolean checkforDiagonalLeftWin()
     {
         return false;
     }

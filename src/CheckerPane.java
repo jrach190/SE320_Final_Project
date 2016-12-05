@@ -9,8 +9,11 @@ import javafx.scene.layout.GridPane;
 
 public class CheckerPane extends GridPane
 {
+    private int rowSize;
+    private int columnSize;
 
-    private TextField[][] checkers = new TextField[7][8];
+    private TextField[][] checkers;
+    private Button[] selectionButtons;
 
     /**
      * Create a CheckerPane of the passed Row Size and Column Size
@@ -19,6 +22,12 @@ public class CheckerPane extends GridPane
      */
     public CheckerPane(int rowSize, int columnSize)
     {
+        this.rowSize = rowSize;
+        this.columnSize = columnSize;
+
+        checkers = new TextField[rowSize][columnSize];
+        selectionButtons = new Button[columnSize];
+
         setHgap(10);
         setVgap(10);
 
@@ -31,10 +40,16 @@ public class CheckerPane extends GridPane
 
                 TextField checker = new TextField("_");
                 checker.setDisable(true);
-                checker.setPrefWidth(25);
 
                 checkers[row][column] = checker;
                 add(checker,column,row);
+
+                if (row == rowSize-1)
+                {
+                    Button selectionButton = new Button("Select");
+                    selectionButtons[column] = selectionButton;
+                    add(selectionButton,column,row+1);
+                }
             }
         }
     }
@@ -46,18 +61,28 @@ public class CheckerPane extends GridPane
      * @param playerNumber The player adding the marker
      *
      * Credit to http://stackoverflow.com/questions/27154996/replace-a-node-at-row-col-in-a-javafx-gridpane for
-     * assistance updating the proper node based on the row and column 
+     * assistance updating the proper node based on the row and column
      *
      */
     public void addCheckerToPane(int row, int column, int playerNumber)
     {
+        int rowReversedForBoard = rowSize-row-1;
         for (Node node : getChildren())
         {
-            if ((node instanceof TextField) && (getColumnIndex(node) == column) && (getRowIndex(node) == row))
+            if ((node instanceof TextField) && (getColumnIndex(node) == column) && (getRowIndex(node) == rowReversedForBoard))
             {
                 ((TextField) node).setText(playerNumber%10==1 ? "X":"O");
             }
         }
+    }
+
+    /**
+     * Return the button array to allow for actions to be set in UIController class
+     * @return
+     */
+    public Button[] getSelectionButtons()
+    {
+        return selectionButtons;
     }
 
 

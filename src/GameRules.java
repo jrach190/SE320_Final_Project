@@ -13,6 +13,8 @@ public class GameRules {
 
     private int turnNumber = 0;
 
+    private boolean gameWon = false;
+
     public GameRules()
     {
         initializeBoard();
@@ -30,7 +32,9 @@ public class GameRules {
             if (gameboard[i][column] == 0)
             {
                 gameboard[i][column] = getPlayerNumber();
+                checkForWin();
                 turnNumber++;
+                System.out.print(getPlayerNumber());
                 return i;
             }
         }
@@ -57,7 +61,8 @@ public class GameRules {
     /**
      * Method to initialize all elements of the board array to 0
      */
-    private void initializeBoard() {
+    private void initializeBoard()
+    {
         for (int i=0; i<7; i++)
         {
             for (int j=0; j<8; j++)
@@ -65,5 +70,31 @@ public class GameRules {
                 gameboard[i][j] = 0;
             }
         }
+    }
+
+    private boolean checkForWin()
+    {
+
+        return gameWon;
+    }
+
+    private boolean checkForVerticalWin()
+    {
+        return false;
+    }
+
+    private boolean checkForHorizontalWin()
+    {
+        return false;
+    }
+
+    private boolean checkForDiagonalWin()
+    {
+        return false;
+    }
+
+    public boolean getGameWonStatus()
+    {
+        return gameWon;
     }
 }

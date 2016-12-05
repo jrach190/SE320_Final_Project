@@ -6,11 +6,13 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceDialog;
+import javafx.scene.control.ButtonType;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
+import java.util.Optional;
 
 public class UIController extends Application {
 
@@ -47,6 +49,15 @@ public class UIController extends Application {
 //        genericInfoBox.getChildren().addAll(new Label("Stuff 1 and Stuff 2"));//currentPlayerDisplay,timerDisplay);
 //        playerInfoHolder.getChildren().addAll(new Label("Hello"));
 
+        initializeButtons();
+
+        c4Pane.setTop(genericInfoBox);
+        c4Pane.setLeft(playerInfoHolder);
+        c4Pane.setCenter(boardDisplay);
+    }
+
+    private void initializeButtons()
+    {
         Button[] buttons = boardDisplay.getSelectionButtons();
 
         for (int i=0; i<buttons.length; i++)
@@ -59,15 +70,26 @@ public class UIController extends Application {
                     boardDisplay.addCheckerToPane(gameRules.addChecker(column), column, gameRules.getPlayerNumber());
                     if (gameRules.getGameWonStatus() && gameRules.getWinner()!= 0)
                     {
-//                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//                        alert.setContentText("Player " + gameRules.getWinner() + " wins!");
-//                        alert.showAndWait();
+                        ButtonType restartButton = new ButtonType("New Game");
+                        ButtonType exitButton = new ButtonType("Exit Game");
 
-                        ChoiceDialog choiceDialog = new ChoiceDialog();
-                        choiceDialog.setContentText("Player " + gameRules.getWinner() + " wins! Select from the " +
-                                "box what you want to do next...");
-//                        choiceDialog.getItems().addAll()
-                        choiceDialog.showAndWait();
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setContentText("Player " + gameRules.getWinner() + " wins!");
+                        alert.getButtonTypes().setAll(restartButton,exitButton);
+
+                        Optional<ButtonType> result = alert.showAndWait();
+
+                        if (result.get() == restartButton)
+                        {
+                            //TODO Restart Game
+                            boardDisplay.resetCheckerPane();
+                            gameRules.resetBoard();
+                        }
+                        if (result.get() == exitButton)
+                        {
+                            System.exit(1);
+                        }
+
                     }
                 }
                 catch (IndexOutOfBoundsException outOfBoundsException)
@@ -78,13 +100,7 @@ public class UIController extends Application {
                 }
             });
         }
-
-        c4Pane.setTop(genericInfoBox);
-        c4Pane.setLeft(playerInfoHolder);
-        c4Pane.setCenter(boardDisplay);
     }
-
-
 
 
 

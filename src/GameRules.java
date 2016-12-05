@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /**
  * Created by jonathanrach on 11/27/16.
  *
@@ -9,9 +11,11 @@
  */
 public class GameRules {
 
+    Random random = new Random();
+
     private int[][] gameboard = new int[7][8];
 
-    private int turnNumber = 0;
+    private int turnNumber = random.nextInt(1);
     private int winner;
 
     private boolean gameWon = false;
@@ -34,11 +38,12 @@ public class GameRules {
         {
             if (gameboard[i][column] == 0)
             {
-                gameboard[i][column] = getPlayerNumber();
+                if (!gameWon) {
+                    gameboard[i][column] = getPlayerNumber();
+                }
                 checkForWin();
                 checkForTie();
                 turnNumber++;
-                System.out.print(getPlayerNumber());
                 return i;
             }
         }
@@ -182,5 +187,12 @@ public class GameRules {
     public boolean getGameWonStatus()
     {
         return gameWon;
+    }
+
+    public void resetBoard()
+    {
+        initializeBoard();
+        gameWon = false;
+        isTied = false;
     }
 }

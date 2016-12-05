@@ -25,11 +25,16 @@ public class CheckerPane extends GridPane
         this.rowSize = rowSize;
         this.columnSize = columnSize;
 
-        checkers = new TextField[rowSize][columnSize];
-        selectionButtons = new Button[columnSize];
-
         setHgap(10);
         setVgap(10);
+
+        initializePane();
+    }
+
+    private void initializePane()
+    {
+        checkers = new TextField[rowSize][columnSize];
+        selectionButtons = new Button[columnSize];
 
         for (int i=0; i<rowSize; i++)
         {
@@ -83,6 +88,19 @@ public class CheckerPane extends GridPane
     public Button[] getSelectionButtons()
     {
         return selectionButtons;
+    }
+
+    public void resetCheckerPane()
+    {
+        for (int i=0; i<rowSize; i++)
+        {
+            for (int j = 0; j < columnSize; j++)
+            {
+                int row = i;
+                int column = j;
+                checkers[row][column].setText("_");
+            }
+        }
     }
 
 

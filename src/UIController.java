@@ -22,11 +22,16 @@ public class UIController extends Application {
     private static int ROWSIZE = 7;
     private static int COLUMNSIZE = 8;
 
+    private boolean timerStarted = false;
+
+    private Timer timer = new Timer();
+
     public static void main (String[] args){launch(args);}
 
     @Override
     public void start(Stage primaryStage) {
         initializec4Pane();
+
 
         Scene scene = new Scene(c4Pane, 660, 350);
 
@@ -79,6 +84,13 @@ public class UIController extends Application {
                 {
                     boardDisplay.addCheckerToPane(gameRules.addChecker(column), column, gameRules.getPlayerNumber());
                     turnAndTimerBar.setTurnLabel("Player " + gameRules.getPlayerNumber());
+
+                    if (!timerStarted)
+                    {
+                        timer.start();
+                        timerStarted=true;
+                        timer.switchPlayerCounter(gameRules.getPlayerNumber());
+                    }
 
                     if (gameRules.getGameWonStatus() && gameRules.getWinner()!= 0)
                     {

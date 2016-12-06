@@ -22,6 +22,14 @@ public class UIController extends Application {
     private static int ROWSIZE = 7;
     private static int COLUMNSIZE = 8;
 
+    private boolean isServer;
+    private int columnToSend=-1;
+
+    public UIController(boolean isServer)
+    {
+        this.isServer = isServer;
+    }
+
     public static void main (String[] args){launch(args);}
 
     @Override
@@ -77,7 +85,7 @@ public class UIController extends Application {
             {
                 try
                 {
-                    boardDisplay.addCheckerToPane(gameRules.addChecker(column), column, gameRules.getPlayerNumber());
+                    addCheckerToBoard(column);
                     turnAndTimerBar.setTurnLabel("Player " + gameRules.getPlayerNumber());
 
                     if (gameRules.getGameWonStatus() && gameRules.getWinner()!= 0)
@@ -92,6 +100,14 @@ public class UIController extends Application {
                     alert.showAndWait();
                 }
             });
+        }
+    }
+
+    public void addCheckerToBoard(int column) {
+        boardDisplay.addCheckerToPane(gameRules.addChecker(column), column, gameRules.getPlayerNumber());
+        if (isServer)
+        {
+            setColumnToSend(column);
         }
     }
 
@@ -157,5 +173,14 @@ public class UIController extends Application {
     private void resetGame() {
         boardDisplay.resetCheckerPane();
         gameRules.resetBoard();
+    }
+
+    private void setColumnToSend(int columnToSend) {
+        this.columnToSend = columnToSend;
+    }
+
+    public int getColumnToSend()
+    {
+        return columnToSend;
     }
 }

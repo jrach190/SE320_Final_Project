@@ -16,7 +16,9 @@ public class Connect4InfoButtonBox extends VBox {
         TextInputDialog player1Name = new TextInputDialog("Player 1");
         TextInputDialog player2Name = new TextInputDialog("Player 2");
 
+        player1Name.setHeaderText("Player 1");
         player1Name.setContentText("Enter the name of the first player:");
+        player2Name.setHeaderText("Player 2");
         player2Name.setContentText("Enter the name of the second player:");
 
         Label player1Label = new Label("Player 1 (O): " + player1Name.showAndWait().get());

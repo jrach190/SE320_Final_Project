@@ -8,7 +8,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import java.util.Optional;
 
@@ -56,6 +55,9 @@ public class UIController extends Application {
         c4Pane.setCenter(boardDisplay);
     }
 
+    /**
+     * Method to initialize the TurnAndTimerBar to display the proper play whose turn it is
+     */
     private void initializeTurnAndTimerBar()
     {
         turnAndTimerBar.setTurnLabel("Player " + gameRules.getPlayerNumber());
@@ -76,6 +78,7 @@ public class UIController extends Application {
                 try
                 {
                     boardDisplay.addCheckerToPane(gameRules.addChecker(column), column, gameRules.getPlayerNumber());
+                    turnAndTimerBar.setTurnLabel("Player " + gameRules.getPlayerNumber());
 
                     if (gameRules.getGameWonStatus() && gameRules.getWinner()!= 0)
                     {

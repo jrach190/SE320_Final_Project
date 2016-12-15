@@ -3,6 +3,7 @@
  */
 
 import javafx.application.Application;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -19,8 +20,10 @@ public class UIController extends Application {
     private Connect4InfoButtonBox buttonAndInfoBox;
     private PlayerAndTimerDisplayBar turnAndTimerBar;
 
-    private static int ROWSIZE = 7;
-    private static int COLUMNSIZE = 8;
+    private boolean isInternetGame = false;
+
+    private int ROWSIZE = 7;
+    private int COLUMNSIZE = 8;
 
     public static void main (String[] args){launch(args);}
 
@@ -30,6 +33,9 @@ public class UIController extends Application {
 
         Scene scene = new Scene(c4Pane, 660, 350);
 
+        if (isInternetGame) {
+            disableBoard();
+        }
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -77,7 +83,7 @@ public class UIController extends Application {
             {
                 try
                 {
-                    boardDisplay.addCheckerToPane(gameRules.addChecker(column), column, gameRules.getPlayerNumber());
+                    addCheckerToBoard(column);
                     turnAndTimerBar.setTurnLabel("Player " + gameRules.getPlayerNumber());
 
                     if (gameRules.getGameWonStatus() && gameRules.getWinner()!= 0)
@@ -93,6 +99,14 @@ public class UIController extends Application {
                 }
             });
         }
+    }
+
+    public void addCheckerToBoard(int column) {
+        if (column == -1)
+        {
+            enableBoard();
+        }
+        boardDisplay.addCheckerToPane(gameRules.addChecker(column), column, gameRules.getPlayerNumber());
     }
 
     /**
@@ -157,5 +171,22 @@ public class UIController extends Application {
     private void resetGame() {
         boardDisplay.resetCheckerPane();
         gameRules.resetBoard();
+    }
+
+    public void disableBoard()
+    {
+        Button[] buttons = buttonAndInfoBox.getButtons();
+        for (Button button : buttons)
+        {
+            button.setDisable(true);
+        }
+    }
+    public void enableBoard()
+    {
+        Button[] buttons = buttonAndInfoBox.getButtons();
+        for (Button button : buttons)
+        {
+            button.setDisable(false);
+        }
     }
 }

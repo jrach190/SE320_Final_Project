@@ -3,6 +3,7 @@
  */
 
 import javafx.application.Application;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -19,16 +20,10 @@ public class UIController extends Application {
     private Connect4InfoButtonBox buttonAndInfoBox;
     private PlayerAndTimerDisplayBar turnAndTimerBar;
 
-    private static int ROWSIZE = 7;
-    private static int COLUMNSIZE = 8;
+    private boolean isInternetGame = false;
 
-    private boolean isServer;
-    private int columnToSend=-1;
-
-    public UIController(boolean isServer)
-    {
-        this.isServer = isServer;
-    }
+    private int ROWSIZE = 7;
+    private int COLUMNSIZE = 8;
 
     public static void main (String[] args){launch(args);}
 
@@ -38,6 +33,9 @@ public class UIController extends Application {
 
         Scene scene = new Scene(c4Pane, 660, 350);
 
+        if (isInternetGame) {
+            disableBoard();
+        }
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -104,11 +102,11 @@ public class UIController extends Application {
     }
 
     public void addCheckerToBoard(int column) {
-        boardDisplay.addCheckerToPane(gameRules.addChecker(column), column, gameRules.getPlayerNumber());
-        if (isServer)
+        if (column == -1)
         {
-            setColumnToSend(column);
+            enableBoard();
         }
+        boardDisplay.addCheckerToPane(gameRules.addChecker(column), column, gameRules.getPlayerNumber());
     }
 
     /**
@@ -175,12 +173,20 @@ public class UIController extends Application {
         gameRules.resetBoard();
     }
 
-    private void setColumnToSend(int columnToSend) {
-        this.columnToSend = columnToSend;
-    }
-
-    public int getColumnToSend()
+    public void disableBoard()
     {
-        return columnToSend;
+        Button[] buttons = buttonAndInfoBox.getButtons();
+        for (Button button : buttons)
+        {
+            button.setDisable(true);
+        }
+    }
+    public void enableBoard()
+    {
+        Button[] buttons = buttonAndInfoBox.getButtons();
+        for (Button button : buttons)
+        {
+            button.setDisable(false);
+        }
     }
 }
